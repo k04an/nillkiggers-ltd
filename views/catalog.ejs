@@ -1,0 +1,37 @@
+<%- include('sections/header') %>
+<div class="col">
+    <div class="container text-dark">
+        <div class="row m-5">
+            <div class="col">
+                <h1 class="display-5 text-center">Каталог</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col d-flex flex-wrap justify-content-around">
+                <% niggers.forEach((nigger, index) => { %>
+                <div class="card bg-light my-4" style="width: 350px">
+                    <img src="https://generative-placeholders.glitch.me/image?width=286&height=180&index=<%=index%>" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title"><%=nigger.name%></div>
+                        <div class="card-title">Пол: <%- nigger.sex == 'M' ? 'Мужской' : 'Женский'%></div>
+                        <div class="card-title">Возраст: <%=nigger.age%></div>
+                        <div class="card-title">Цена: <%=nigger.price%></div>
+                        <a class="btn btn-dark px-4 my-2 w-100" href="/details/<%=nigger.id%>">Подробнее</a>
+                    </div>
+                </div>
+                <%})%>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col d-flex justify-content-center">
+                <ul class="pagination">
+                    <% for(let i = 1; i <= pageAmount; i++) { %>
+                        <li class="page-item <%- i == page ? 'active' : null %>"><a href="/catalog/<%=i%>" class="page-link"><%=i%></a></li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('sections/footer') %>

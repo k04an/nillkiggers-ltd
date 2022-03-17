@@ -1,0 +1,80 @@
+<%- include('sections/header') %>
+<div class="col text-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col p-5 my-4 h-100">
+                <h1 class="text-center display-3">Рабочие негры</h1>
+                <h4 class="text-center">По доступной цене</h4>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col p-4">
+                <h1 class="text-center display-5">Почему мы?</h1>
+                <div class="d-flex flex-wrap justify-content-around mt-4">
+                    <div class="card bg-light my-4" style="width: 350px">
+                        <div class="card-header tw-bold ts-2">Опыт</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Мы на рынке уже более 10 лет</h5>
+                            <div class="card-text">
+                                За это время, мы научились преодолевать возможные трудности связанные с доставкой и
+                                оплатой нашего товара. А наши сотрудники хорошо обучены и опытны. С первых моментов
+                                работы с нами вы ощутите весь профессиональизм накопленный за эти года и можете не
+                                сомневаться с нами ваш товар в надежных руках.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light my-4" style="width: 350px">
+                        <div class="card-header tw-bold ts-2">Глобальность</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Отделения нашей компании расположены по всему миру</h5>
+                            <div class="card-text">
+                                В нашем распоряжении огромная логистическая сеть, с тысячами складов и транзитных
+                                пунктов. Доставка и выдача товара будет осуществлена в максимавльно удобном для Вас
+                                месте.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light my-4" style="width: 350px">
+                        <div class="card-header tw-bold ts-2">Надежность</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Минимальный процент потерянного товара</h5>
+                            <div class="card-text">
+                                Мы пользуемся услугами только профессиональных и надежных людей, из-за этого шанс потери
+                                товара практически равен 0. Все ваши данные защищиены и не погидают стен наших офисов и
+                                дисков наших серверов. Мы не сотрудничаем с правоохранительными органами и в случае
+                                запросов, отрицаем любую вашу связь с нами.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col p-4">
+                <h1 class="text-center display-5">Последние товары</h1>
+                <div class="d-flex flex-wrap justify-content-around mt-4">
+                    <% niggers.forEach((nigger, index) => { %>
+                        <div class="card bg-light my-4" style="width: 350px">
+                            <img src="https://generative-placeholders.glitch.me/image?width=286&height=180&index=<%=index%>" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title"><%=nigger.name%></div>
+                                <div class="card-title">Пол: <%- nigger.sex == 'M' ? 'Мужской' : 'Женский'%></div>
+                                <div class="card-title">Возраст: <%=nigger.age%></div>
+                                <div class="card-title">Цена: <%=nigger.price%></div>
+                                <a class="btn btn-dark px-4 my-2 w-100" href="/details/<%=nigger.id%>">Подробнее</a>
+                            </div>
+                        </div>
+                    <%})%>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="/catalog" class="btn btn-dark" style="width: 400px">Смотреть весь каталог</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('sections/footer') %>

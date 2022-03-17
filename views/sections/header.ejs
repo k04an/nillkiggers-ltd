@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NillKiggers LTD | <%=pageTitle%></title>
+    <%- include('includes'); %>
+</head>
+<body>
+<div class="container-fluid p-0 text-white d-flex flex-column" style="min-height: 100vh">
+    <header class="row m-0">
+        <div class="col bg-dark">
+            <div class="container p-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="navbar navbar-expand-md navbar-dark bg-dark">
+                            <a href="/" class="navbar-brand">NillKiggers LTD</a>
+                            <% nav.forEach((item, index) => { %>
+                            <div class="nav-item">
+                                <a href="<%=item.url%>" style="color: white" class="nav-link <%- active === index ? 'active fw-bold' : null%>">
+                                    <%=item.name%>
+                                </a>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="row m-0">

@@ -1,0 +1,65 @@
+<%- include('sections/header') %>
+<div class="col">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card my-5 ml-5 mr-1 text-dark" style="max-width: 500px">
+                    <div class="card-header">Детали</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="https://generative-placeholders.glitch.me/image?width=500&height=1200" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="row">
+                                    <p class="opacity-75">Имя:</p>
+                                    <h4><%=nigger.name%></h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="opacity-75">Возраст:</p>
+                                        <h4><%=nigger.age%></h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="opacity-75">Пол:</p>
+                                        <h4><%- nigger.sex == 'M' ? 'Мужской' : 'Женский'%></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="opacity-75">Текущее местоположение:</p>
+                                    <h4><%=nigger.currentLocation%></h4>
+                                </div>
+                                <div class="row">
+                                    <p class="opacity-75">Цена:</p>
+                                    <h4><%=nigger.price%></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card m-md-5 text-dark">
+                    <div class="card-header">Пройденные транзитные пункты</div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Город</th>
+                                </tr>
+                            </thead>
+                            <% nigger.transitions.forEach(item => {%>
+                            <tr>
+                                <td><%=item.date.toLocaleDateString()%></td>
+                                <td><%=item.city%></td>
+                            </tr>
+                            <%})%>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('sections/footer') %>
